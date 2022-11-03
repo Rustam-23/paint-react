@@ -1,0 +1,38 @@
+﻿@import "./variables";
+
+
+.toolbar {
+  height: $toolbar-height;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 4px 5px gray;
+  z-index: 2;
+  
+  &__btn {
+    height: 25px;
+    width: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -moz-background-size: cover;
+    margin-left: 20px;
+  }
+  .brush {
+    background: url('../assets/image/brush.png') no-repeat center center;
+  }
+  
+}
+
+.setting-bar {
+  height: $toolbar-height;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 4px 5px gray;
+  top: $toolbar-height;
+}
