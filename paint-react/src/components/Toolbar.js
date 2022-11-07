@@ -3,12 +3,16 @@ import "../styles/toolbar.scss";
 import { BsBrush, BsCircle, BsEraser } from "react-icons/bs";
 import { BiRectangle, BiRedo, BiSave, BiUndo } from "react-icons/bi";
 import { HiOutlineMinusSm } from "react-icons/hi";
+import canvasState from "../store/canvasState";
+import toolState from "../store/toolState";
+import Brush from "../tools/Brush";
+import Rect from "../tools/Rect";
 
 const Toolbar = () => {
   return (
     <div className="toolbar">
-      <button className="toolbar__button brush"><BsBrush /></button>
-      <button className="toolbar__button rect"><BiRectangle /></button>
+      <button className="toolbar__button brush" onClick={() => toolState.setTool(new Brush(canvasState.canvas))}><BsBrush /></button>
+      <button className="toolbar__button rect" onClick={() => toolState.setTool(new Rect(canvasState.canvas))}><BiRectangle /></button>
       <button className="toolbar__button circle"><BsCircle /></button>
       <button className="toolbar__button eraser"><BsEraser /></button>
       <button className="toolbar__button line"><HiOutlineMinusSm /></button>
