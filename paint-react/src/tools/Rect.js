@@ -45,8 +45,6 @@ export default class Rect extends Tool {
       // this.ctx.fillRect(x, y, w, h) 
       // this.ctx.strokeRect(x, y, w, h)
       // this.ctx.clearRect(x, y, w, h)
-      this.ctx.fillStyle = "rgb(200, 0, 0)";
-      this.ctx.strokeStyle = "rgb(0, 0, 200)";
       this.ctx.fill();
       this.ctx.stroke();
       console.log("draw rect");

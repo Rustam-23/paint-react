@@ -18,6 +18,17 @@ const SettingBar = () => {
         max={50}
         onChange={e => ToolState.setLineWidth(e.target.value)}
       />
+      <label
+        style={{ marginLeft: "20px" }}
+        htmlFor="color-stroke"
+      >Color stroke
+      </label>
+      <input
+        style={{ margin: "10px" }}
+        id="color-stroke"
+        type="color"
+        onChange={e => ToolState.setStrokeColor(e.target.value)}
+      />
     </div>
   );
 };
