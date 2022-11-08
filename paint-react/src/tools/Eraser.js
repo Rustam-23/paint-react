@@ -1,6 +1,6 @@
 ﻿import Tool from "./Tool";
 
-export default class Brush extends Tool {
+export default class Eraser extends Tool {
   constructor(canvas) {
     super(canvas);
     this.listen();
@@ -12,15 +12,10 @@ export default class Brush extends Tool {
     this.canvas.onmouseup = this.mouseUpHandler.bind(this);
   }
 
-  mouseUpHandler(e) {
-    this.mouseDown = false;
-  }
-
   mouseDownHandler(e) {
     this.mouseDown = true;
     this.ctx.beginPath();
     this.ctx.moveTo(e.pageX - e.target.offsetLeft, e.pageY - e.target.offsetTop);
-    console.log("e.pageX: ", e.pageX, "e.target.offsetLeft: ", e.target.offsetLeft)
   }
 
   mouseMoveHandler(e) {
@@ -29,9 +24,13 @@ export default class Brush extends Tool {
     }
   }
 
+  mouseUpHandler(e) {
+    this.mouseDown = false;
+  }
+
   draw(x, y) {
     this.ctx.lineTo(x, y);
+    this.ctx.strokeStyle = "rgb(255, 255, 255)";
     this.ctx.stroke();
-    console.log("draw brush");
   }
 }
